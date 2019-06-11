@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST" action="/cards">
+        <input type="number" name="mana" value="" placeholder="mana">
+        <input type="number" name="attack" value="" placeholder="attack">
+        <input type="number" name="health" value="" placeholder="health">
+        <input type="text" name="description" value="" placeholder="name/description">
+        <input type="submit">
+    </form>
+
+    <h3>Current List:</h3>
+    <% for(var i = 0; i < deck.length; i++) { %>
+        <hr>
+        <div>
+            <p>Mana:
+                <%=deck[i].mana %>
+            </p>
+            <p>Attack:
+                <%=deck[i].attack %>
+            </p>
+            <p>Health:
+                <%=deck[i].healt %>
+            </p>
+            <p>Description:
+                <%=deck[i].description %>
+            </p>
+            <a href="/cards/remove/<%=deck[i].id%>"> Remove from list</a>
+        </div>
+
+        <%  } %>
+
+
+
+            <hr>
+            <h1>All Cards</h1>
+
+            <% for(var i = 0; i < cards.length; i++) { %>
+                <hr>
+                <div>
+                    <p>Mana:
+                        <%=cards[i].mana %>
+                    </p>
+                    <p>Attack:
+                        <%=cards[i].attack %>
+                    </p>
+                    <p>Health:
+                        <%=cards[i].healt %>
+                    </p>
+                    <p>Description:
+                        <%=cards[i].description %>
+                    </p>
+                    <a href="/cards/add/<%=cards[i].id%>"> Add to list</a>
+                </div>
+
+                <%  } %>
+</body>
+
+</html>

@@ -1,25 +1,25 @@
 module.exports = {
-  development: {
-      client: 'pg',
-      connection: {
-        database: "users",
-        host: "localhost"
-      },
-      migrations: {
-          directory: __dirname + '/db/migrations',
+    development: {
+        client: 'pg',
+        connection: {
+            database: "hearthstone",
+            host: "localhost"
         },
-      seeds: {
-          directory: __dirname + '/db/seeds',
+        migrations: {
+            directory: __dirname + '/db/migrations',
+        },
+        seeds: {
+            directory: __dirname + '/db/seeds',
         },
     },
-  production: {
-      client: 'pg',
-      connection: process.env.DATABASE_URL,
-      migrations: {
-          directory: __dirname + '/db/migrations',
+    production: {
+        client: 'pg',
+        connection: process.env.DATABASE_URL,
+        migrations: {
+            directory: __dirname + '/db/migrations',
         },
-      seeds: {
-          directory: __dirname + '/db/seeds/production',
+        seeds: {
+            directory: __dirname + '/db/seeds/production',
         },
     },
 };
